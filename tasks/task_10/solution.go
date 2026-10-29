@@ -182,6 +182,8 @@ func (h *httpHandler) handleList(w http.ResponseWriter, r *http.Request) {
 		switch vals[0] {
 		case "true":
 			done = true
+		case "false":
+			done = false
 		default:
 			http.Error(w, "invalid done value", http.StatusBadRequest)
 			return
